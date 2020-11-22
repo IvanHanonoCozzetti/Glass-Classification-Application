@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<title>GCA</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+<style>
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1541739615699-4331d1174f17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+  hr.solid {
+    border-top: 3px solid #8B0000;
+}
+
+.container{
+  max-width: 930px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*social links*/
+.fa {
+  padding: 3px;
+  font-size: 30px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+/*social links*/
+.fa:hover {
+    opacity: 0.7;
+}
+
+/*social links*/
+.fa-github {
+  background: 0;
+  color: white;
+  float: right;
+  padding-top: 10px;
+  display: block;
+}
+
+/*social links*/
+.fa-linkedin {
+  background: 0;
+  color: white;
+  float: right;
+  padding-top: 10px;
+  display: block;
+}
+
+h1 {
+  font-size: 37px;
+}
+
+.box {
+  background-color: white;
+  border: 3px solid black;
+  max-height: 300px;
+  padding: 11px;
+  margin: 35px;
+  border-radius: 7px;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #8B0000;
+  width: 180px;
+}
+
+.button1:hover {
+  background-color: #8B0000;
+  color: white;
+}
+
+.header01 {
+  background-color: #8B0000;
+  height: 60px;
+  padding: 1px;
+  padding-left: 17px;
+}
+
+.footer1 {
+  background-color: #8B0000;
+  height: 35px;
+  padding: 6px;
+  padding-left: 17px;
+}
+
+.text {
+  padding: 15px;
+}
+
+</style>
+  
+<div class="container">
+  <h1 style="color:#8B0000", style = "font-family:courier,arial,helvetica;"><b>Glass Classification Application results:</b> <a href="https://www.linkedin.com/in/ivan-hanono-cozzetti-a06415190/" class="fa fa-linkedin" style="color:black"> </a> <a href="https://github.com/IvanHanonoCozzetti" class="fa fa-github" aria-hidden="true" style="color:black"> </a>
+  </h1>
+    <hr class="solid">
+      <h5><b>User input parameters: {{lis}}</b></h5>
+      <h5><b>The category of the Glass is <b>{{ans}}</b></b></h5>
+
+       <div class="row">
+          <div class="column">
+
+            <h3><b>Type of glass(class attribute):</b></h3>
+            
+               <h6> 1 - Building Windows, Float Processed </h6>
+               <h6> 2 - Building Windows, Non-Float Processed </h6> 
+               <h6> 3 - Vehicle Windows, Float Processed </h6>
+               <h6> 4 - Vehicle Windows, Non-Float Processed </h6>
+               <h6> 5 - Containers </h6>
+               <h6> 6 - Tableware </h6>
+               <h6> 7 - Headlamps </h6>
+               
+               <br><br>
+
+               <a href="{% url 'home' %}"><b>Back to the Application</b></a>
+
+          </div>
+
+
+          <div class="box">
+
+            <h4 style="color:black"><b>Relevant details:</b></h4>
+
+            <button onclick="document.getElementById('id01').style.display='block'" class="button button1">Float glass</button>
+ 
+            <div id="id01" class="w3-modal w3-animate-opacity">
+             <div class="w3-modal-content w3-card-4">
+              <header class="header01"> 
+                <span onclick="document.getElementById('id01').style.display='none'" 
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <h2 style="color:white"><b>Float glass</b></h2>
+              </header>
+              <div class="text">
+                <p>Float glass is a sheet of glass made by floating molten glass on a bed of molten metal, typically tin, although lead and other various low-melting-point alloys were used in the past. This method gives the sheet uniform thickness and very flat surfaces.</p>
+                <p>Today, float glass is the most widely used form of glass in consumer products. Due to both its high quality with no additional polishing required and its structural flexibility during production, it can easily be shaped and bent into a variety of forms while in a heated, syrupy state. This makes it ideal for a variety of applications such as: <br>
+                  -Automobile glass (e.g. windshields, windows, mirrors). <br>
+                  -Mirrors. <br>
+                  -Furniture (e.g. in tables and shelves). <br>
+                  -Insulated glass. <br>
+                  -Windows and doors. <br>
+               Most forms of specialized glass such as toughened glass, frosted glass, laminated safety glass and soundproof glass consist of standard float glass that has been further processed.</p>
+              </div>
+              <footer class="footer1">
+              </footer>
+            </div>
+            </div>
+
+
+            <br>
+
+        
+            <button onclick="document.getElementById('id02').style.display='block'" class="button button1">Vehicle Windows</button>
+
+            <div id="id02" class="w3-modal w3-animate-opacity">
+             <div class="w3-modal-content w3-card-4">
+              <header class="header01"> 
+                <span onclick="document.getElementById('id02').style.display='none'" 
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <h2 style="color:white"><b>Vehicle Windows</b></h2>
+              </header>
+              <div class="text">
+                <p>Vehicle glass includes windscreens, side and rear windows, and glass panel roofs on a vehicle. Side windows can be either fixed or raised and lowered by depressing a button (power window) or switch or using a hand-turned crank. The power moonroof, a transparent, retractable sunroof, may be considered as an extension of the power window concept. Some vehicles include sun blinds for rear and rear side windows. The windshield of a car is appropriate for safety and protection from debris on the road. The majority of vehicle glass is held in place by glass run channels, which also serve to contain any fragments of glass if the glass breaks.</p>
+                <p>Back Glass also called rear window glass, rear windshield, or rear glass, is the piece of glass opposite the windshield in a vehicle. Back glass is made from tempered glass, also known as safety glass, and when broken will shatter into small, round pieces. This is different from a front windshield, which is made of laminated glass, glass which consists of two pieces of glass, with vinyl in between.</p>
+                <p>This piece of glass may contain heating coils or antennae, depending on the year, make, and model of the vehicle.</p>
+              </div>
+              <footer class="footer1">
+              </footer>
+            </div>
+            </div>
+
+
+            <br>
+        
+        
+            <button onclick="document.getElementById('id03').style.display='block'" class="button button1">Glass Containers</button>
+
+            <div id="id03" class="w3-modal w3-animate-opacity">
+             <div class="w3-modal-content w3-card-4">
+              <header class="header01"> 
+                <span onclick="document.getElementById('id03').style.display='none'" 
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <h2 style="color:white"><b>Glass Containers</b></h2>
+              </header>
+              <div class="text">
+                <p>Container glass is a type of glass for the production of glass containers, such as bottles, jars, drinkware, and bowls. Container glass stands in contrast to flat glass (used for windows, glass doors, transparent walls, windshields) and glass fiber (used for thermal insulation, in fiberglass composites, and optical communication).</p>
+                <p>Container glass has a lower magnesium oxide and sodium oxide content than flat glass, and a higher Silica, Calcium oxide, and Aluminum oxide content. Its higher content of water-insoluble oxides imparts slightly higher chemical durability against water, which is required for storage of beverages and food.</p>
+                <p> Most container glass is soda-lime glass, produced by blowing and pressing techniques, while some laboratory glassware is made from borosilicate glass.</p>
+                <p>Container glass is used in the following: <br>
+                  -Glass bottles: <br>
+                  -Beer bottle <br>
+                  -Bologna bottle <br>
+                  -Fiasco <br>
+                  -Milk bottle <br>
+                  -Sealed bottles <br>
+                  -Wine bottles <br>
+                  -Jars <br>
+                  -Antique fruit jar <br>
+                  -Killing jar <br>
+                  -Kilner jar <br>
+                  -Leyden jar <br>
+                  -Mason jar <br>
+                  -Drinkware <br>
+                  -Bowls <br>
+                  -Pitchers <br>
+                  -Vases <br>
+                  -Laboratory glassware</p>
+              </div>
+              <footer class="footer1">
+              </footer>
+            </div>
+            </div>
+
+
+            <br>
+        
+        
+            <button onclick="document.getElementById('id04').style.display='block'" class="button button1">Tableware</button>
+
+            <div id="id04" class="w3-modal w3-animate-opacity">
+             <div class="w3-modal-content w3-card-4">
+              <header class="header01"> 
+                <span onclick="document.getElementById('id04').style.display='none'" 
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <h2 style="color:white"><b>Tableware</b></h2>
+              </header>
+              <div class="text">
+                <p>Vessels and containers to hold alcoholic beverages such as wine, whether red, white, sparkling tend to be quite specialised in form, with for example Port wine glasses, beer glasses, brandy balloons, aperitif and liqueur glasses all having different shapes. Water glasses, juice glasses and hot chocolate mugs are also differentiated.</p>
+              </div>
+              <footer class="footer1">
+              </footer>
+            </div>
+            </div>
+
+
+            <br>
+        
+        
+            <button onclick="document.getElementById('id05').style.display='block'" class="button button1">Headlamps</button>
+
+            <div id="id05" class="w3-modal w3-animate-opacity">
+             <div class="w3-modal-content w3-card-4">
+              <header class="header01"> 
+                <span onclick="document.getElementById('id05').style.display='none'" 
+                class="w3-button w3-large w3-display-topright">&times;</span>
+                <h2 style="color:white"><b>Headlamps</b></h2>
+              </header>
+              <div class="text">
+                <p>Modern reflectors are commonly made of compression-moulded or injection moulded plastic, though glass and metal optic reflectors also exist. The reflective surface is vapour deposited aluminum, with a clear overcoating to prevent the extremely thin aluminium from oxidizing. Extremely tight tolerances must be maintained in the design and production of complex-reflector headlamps.</p>
+                <p>The first electric headlamp light source was the tungsten filament, operating in a vacuum or inert-gas atmosphere inside the headlamp bulb or sealed beam. Compared to newer-technology light sources, tungsten filaments give off small amounts of light relative to the power they consume. Also, during normal operation of such lamps, tungsten boils off the surface of the filament and condenses on the bulb glass, blackening it. This reduces the light output of the filament and blocks some of the light that would pass through an unblackened bulb glass, though blackening was less of a problem in sealed beam units; their large interior surface area minimized the thickness of the tungsten accumulation. For these reasons, plain tungsten filaments are all but obsolete in automotive headlamp service.</p>
+              </div>
+              <footer class="footer1">
+              </footer>
+            </div>
+            </div>
+            <br>
+     
+       </div>
+
+</div>
+</body>
+</html>

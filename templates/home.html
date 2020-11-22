@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<title>GCA</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<body>
+<style>
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1541739615699-4331d1174f17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1402&q=80');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+  hr.solid {
+    border-top: 3px solid #8B0000;}
+
+.container{
+  max-width: 1020px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*social links*/
+.fa {
+  padding: 3px;
+  font-size: 30px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+/*social links*/
+.fa:hover {
+    opacity: 0.7;
+}
+
+/*social links*/
+.fa-github {
+  background: 0;
+  color: white;
+  float: right;
+  padding-top: 10px;
+  display: block;
+}
+
+/*social links*/
+.fa-linkedin {
+  background: 0;
+  color: white;
+  float: right;
+  padding-top: 10px;
+  display: block;
+}
+
+.images {
+  position:absolute;
+  right: 15%;
+  top: 40%;
+  width: 35%;
+  border: 3px solid black;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  left: 50%;
+  right: 15%;
+  height: 40%;
+  width: 35%;
+  opacity: 0%;
+  transition: .5s ease;
+  background-color: #B97A39;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.box {
+  background-color: white;
+  /*border: 3px solid black;*/
+  max-height: 94px;
+  padding: 5px;
+  margin: 13px;
+  background: rgb(238, 232, 232); /* Fallback for older browsers without RGBA-support */
+  background: rgba(238, 232, 232, 0.5);
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h1 {
+  font-size: 37px;
+}
+
+</style>
+
+<div class="container">
+  <h1 style="color:#8B0000", style = "font-family:courier,arial,helvetica;"><b>Glass Classification Application</b> <a href="https://www.linkedin.com/in/ivan-hanono-cozzetti-a06415190/" class="fa fa-linkedin" style="color:black"> </a> <a href="https://github.com/IvanHanonoCozzetti" class="fa fa-github" aria-hidden="true" style="color:black"> </a>
+  </h1>
+  <hr class="solid">
+   <div class="box">
+    <h5 style="color:black", style = "font-family:courier,arial,helvetica;">This is a Machine Learning Application for glass identification.<br>The model utilizes Random Forest Classification algorithm.<br> The variables are highly correlated with each other including the response variables, this is highly skewed data and normally distributed within each feature, scaled and centred around 0 (Standard Scaler).</h5>
+   </div>
+   <h3><b><b>User Input Parameters</b></b></h3>
+    <div class="row">
+     <div class="column">
+
+      <form action="{% url 'result' %}">
+        
+            {% csrf_token %}
+
+            Refractive Index: <br> <input type="text" required name="RI"><br><br>
+            Sodium: <br> <input type="text" required name="Na"><br><br>
+            Magnesium: <br> <input type="text" required name="Mg"><br><br>
+            Aluminum: <br> <input type="text" required name="Al"><br><br>
+            Silicon: <br> <input type="text" required name="Si"><br><br>
+     </div>
+
+     <div class="column">
+
+            Potassium: <br> <input type="text" required name="K"><br><br>
+            Calcium: <br> <input type="text" required name="Ca"><br><br>
+            Barium: <br> <input type="text" required name="Ba"><br><br>
+            Iron: <br> <input type="text" required name="Fe"><br><br>
+
+            <input type="Submit" name="" value="Sort">
+
+      </form>   
+      </div>
+   </div>
+</div>
+
+<div class="container">
+  <img src="https://miro.medium.com/max/576/1*58f1CZ8M4il0OZYg2oRN4w.png" alt="Random Forest" width="450" height="250" style="float:right" class="images">
+  <div class="overlay">
+    <div class="text">A random forest is a data construct applied to machine learning that develops large numbers of random decision trees analyzing sets of variables. This type of algorithm helps to enhance the ways that technologies analyze complex data.
+    </div>
+  </div>
+</div>
+
+</body>
+</html> 

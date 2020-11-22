@@ -1,0 +1,1 @@
+web: gunicorn DjangoDeployedModel1.wsgi

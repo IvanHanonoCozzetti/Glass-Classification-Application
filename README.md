@@ -1,1 +1,1 @@
-<img src="GCA-2.png">
+<img src="GCA2.png">
